@@ -50,7 +50,7 @@
     int dirFD = open([docPath fileSystemRepresentation], O_EVTONLY);
     if (dirFD < 0) {return;}
     
-    _dirQueueSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, dirFD, DISPATCH_VNODE_RENAME|DISPATCH_VNODE_WRITE, dispatch_get_main_queue());
+    _dirQueueSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, dirFD, DISPATCH_VNODE_WRITE, dispatch_get_main_queue());
     
     if (!_dirQueueSource)
     {
